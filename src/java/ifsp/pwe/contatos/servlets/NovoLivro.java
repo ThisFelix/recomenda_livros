@@ -20,6 +20,7 @@ public class NovoLivro implements Tarefa {
     public String executa(HttpServletRequest req, HttpServletResponse resp) {
     HttpSession session = req.getSession();
     Livro livro = new Livro(req.getParameter("titulo"), req.getParameter("autor"), req.getParameter("genero"));
+    livro.setStatus(req.getParameter("status_leitura"));
     Usuario user = (Usuario) session.getAttribute("usuarioLogado");
     
         try {

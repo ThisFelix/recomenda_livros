@@ -52,7 +52,7 @@ public class LivroDAO {
     public Collection<Livro> buscaLivroPorUsuario(int id) throws SQLException {
         List<Livro> similares = new ArrayList<>();
 
-        PreparedStatement stmt = this.connection.prepareStatement("SELECT b.*, c.*, d.descricao FROM lista_livros as b, livro as c, livro_status as d WHERE b.cod_usuario = "+id+" AND b.cod_livro in ( SELECT c.id_livro FROM livro) AND d.id_status = b.status");
+        PreparedStatement stmt = this.connection.prepareStatement("SELECT b.*, c.*, d.descricao_status FROM lista_livros as b, livro as c, livro_status as d WHERE b.cod_usuario = "+id+" AND b.cod_livro in ( SELECT c.id_livro FROM livro) AND d.id_status = b.status");
 
         if (id == 0) {
             stmt = this.connection.prepareStatement("select * from livro ORDER BY id ASC");
@@ -61,7 +61,7 @@ public class LivroDAO {
         ResultSet rs = stmt.executeQuery();
         int id_atv = 0;
         while (rs.next()) {
-            id_atv = rs.getInt("id");
+            id_atv = rs.getInt("id_livro");
             Livro livro = new Livro(rs.getString("titulo"), rs.getString("autor"), rs.getString("genero"));
             livro.setId(id_atv);
             livro.setStatus(rs.getString("status"));
@@ -99,8 +99,25 @@ public class LivroDAO {
         stmt.setString(2, livro.getAutor());
         stmt.setString(3, livro.getGenero());
         stmt.execute();
-        stmt.close();
         
+        int id = 0;
+        String sql2 = "SELECT MAX(id_livro) as last_insert FROM livro";
+        PreparedStatement stmt2 = connection.prepareStatement(sql2);
+        ResultSet rs = stmt2.executeQuery();
+        while(rs.next()){
+           id = rs.getInt("last_insert");
+        }
+        
+        String sql3 = "INSERT INTO lista_livros(cod_livro, cod_usuario, status) VALUES (?,?,?)";
+        PreparedStatement stmt3 = connection.prepareStatement(sql3);
+        stmt3.setInt(1, id);
+        stmt3.setInt(2, user.getId());
+        stmt3.setInt(3, 2);
+        stmt3.execute();
+       
+        stmt.close();
+        stmt2.close(); 
+        stmt3.close();
     }
     
     public static void adiciona_lista(Livro livro, Usuario user) throws SQLException {

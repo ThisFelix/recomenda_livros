@@ -1,14 +1,9 @@
 <%-- 
     Document   : Main
     Created on : 07/09/2017, 21:32:51
-    Author     : Félix
+    Author     : F�lix
 --%>
 <!DOCTYPE html>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import = "java.io.*,java.util.*,java.sql.*"%>
-<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -44,8 +39,15 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Inserir<span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+        
+            
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="inserir.jsp">Inserir<span class="sr-only">(current)</span></a>
+               </li> 
+            </ul>
+               
             </li>
         </ul>
         <form class="form-inline"  action="controller" method="POST" name="sair">
@@ -75,16 +77,7 @@
     </form>
     <hr>
     <div class="list-group">
-    <c:forEach var="index" items="${userAtv}">
-    <a class="list-group-item list-group-item-action flex-column align-items-start"  data-toggle="collapse" href="#<c:out value="${index.id}"/>" aria-expanded="false" aria-controls="collapseExample">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Título: <c:out value="${index.titulo}"/></h5>
-              <small>Publicação: <c:out value="${index.data}"/></small>
-            </div>
-              <p class="mb-1 collapse" id="<c:out value="${index.id}"/>" ><c:out value="${index.corpo}"/><br><small><button type="submit" class="btn-sm btn-success"> Correcoes </button></small></p>   
-        
-    </a>
-    </c:forEach>
+    
     </div>
     </div>
     </div>

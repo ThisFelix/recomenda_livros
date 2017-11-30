@@ -54,23 +54,33 @@
             <div class="col-md-8 mt-5">
                 <div class="card mx-auto">
                     <div class="card-header teal darken-4 white-text">
-                        <h3><i class="fa fa-save"></i> Inserir atividade</h3>
+                        <h3><i class="fa fa-book"></i> Inserir Livro</h3>
                     </div>
                     <div class="card-body">
                        <form action="controller" method="POST">
-                            <input type="hidden" name="tarefa" value="NovaAtividade">
-                            <div class="md-form">
-                                <i class="fa fa-pencil prefix teal-text"></i>
-                                <input type="text" id="titulo" class="form-control" name="titulo">
-                                <label for="titulo">Titulo </label>
+                            <input type="hidden" name="tarefa" value="NovoLivro">
+                            <div class="form-group">
+                                <i class="fa fa-pencil prefix teal-text"></i>&nbsp;<label for="titulo_id">Titulo </label>
+                                <input type="text" id="titulo_id" class="form-control" name="titulo">
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-user prefix teal-text"></i>&nbsp;<label for="autor_id">Autor </label>
+                                <input type="text" id="autor_id" class="form-control" name="autor">
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-check prefix teal-text"></i><label for="genero_id">Gênero</label>
+                                <input type="text" id="genero_id" class="form-control" name="genero">
                             </div>
 
-                            <div class="md-form">
-                                <i class="fa fa-book prefix teal-text"></i>
-                                <textarea type="text" id="corpo" class="md-textarea" name="corpo"></textarea>
-                                <label for="corpo">Corpo </label>
+                            <div class="form-group">
+                            <label for="sel1">Status de Leitura</label>
+                            <select name="status_leitura" class="form-control" id="sel1">
+                                <option value="2" disabled selected>Escolha uma opção</option>
+                                  <option value="1">Lido</option>
+                                  <option value="2">Leitura Não Iniciada</option>
+                                  <option value="3">Em leitura</option>
+                            </select>
                             </div>
-
                             <div class="text-center">
                                 <button type="submit" class="btn teal darken-4"> Enviar </button>
                             </div>
@@ -82,11 +92,6 @@
             <div class="col-md-2"></div>
         </div>
     </div>
-
-            
-               
-              
-        </div>
         <!-- SCRIPTS -->
         <!-- JQuery -->
         <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
