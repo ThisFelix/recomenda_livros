@@ -22,7 +22,7 @@
 </head>
 <body>
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark stylish-color">
+<nav class="navbar navbar-expand-lg navbar-dark">
 
     <!-- Navbar brand -->
     <a class="navbar-brand" href="#">Gerenciador de Atividades</a>

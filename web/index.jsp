@@ -20,26 +20,26 @@
             <div class="col-md-2"></div>
             <div class="col-md-8 mt-5">
                 <div class="card mx-auto " style="width: 28rem;">
-                    <div class="card-header teal darken-4 white-text">
+                    <div class="card-header white-text">
                         <h3><i class="fa fa-lock"></i> Login:</h3>
                     </div>
                     <div class="card-body">
                         <form action="controller" method="post" role="form">
                             <input type="hidden" name="tarefa" value="Login">
                             <div class="md-form">
-                                <i class="fa fa-envelope prefix teal-text"></i>
+                                <i class="fa fa-envelope prefix black-text"></i>
                                 <input type="text" id="email" class="form-control" name="email">
                                 <label for="email">Email </label>
                             </div>
 
                             <div class="md-form">
-                                <i class="fa fa-lock prefix teal-text"></i>
+                                <i class="fa fa-lock prefix black-text"></i>
                                 <input type="password" id="senha" class="form-control" name="senha">
                                 <label for="senha">Senha </label>
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn teal darken-4">Login</button>
+                                <button type="submit" class="btn">Login</button>
                             </div>
                             <a href="cadastrar.jsp"> Cadastrar </a>
                         </form>

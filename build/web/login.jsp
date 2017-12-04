@@ -20,7 +20,7 @@
             <div class="col-md-2"></div>
             <div class="col-md-8 mt-5">
                 <div class="card mx-auto " style="width: 28rem;">
-                    <div class="card-header teal darken-4 white-text">
+                    <div class="card-header red darken-4 white-text">
                         <h3><i class="fa fa-lock"></i> Login:</h3>
                     </div>
                     <div class="card-body">

@@ -17,7 +17,7 @@
 </head>
 <body>
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark teal darken-4">
+<nav class="navbar navbar-expand-lg navbar-dark ">
 
     <!-- Navbar brand -->
     <a class="navbar-brand" href="">Gerenciador de Atividades</a>
@@ -58,22 +58,22 @@
             <div class="col-md-2"></div>
             <div class="col-md-8 mt-5">
                 <div class="card mx-auto">
-                    <div class="card-header teal darken-4 white-text">
+                    <div class="card-header white-text">
                         <h3><i class="fa fa-book"></i> Inserir Livro</h3>
                     </div>
                     <div class="card-body">
                        <form action="controller" method="POST">
                             <input type="hidden" name="tarefa" value="NovoLivro">
                             <div class="form-group">
-                                <i class="fa fa-pencil prefix teal-text"></i>&nbsp;<label for="titulo_id">Titulo </label>
+                                <i class="fa fa-pencil prefix"></i>&nbsp;<label for="titulo_id">Titulo </label>
                                 <input type="text" id="titulo_id" class="form-control" name="titulo">
                             </div>
                             <div class="form-group">
-                                <i class="fa fa-user prefix teal-text"></i>&nbsp;<label for="autor_id">Autor </label>
+                                <i class="fa fa-user prefix "></i>&nbsp;<label for="autor_id">Autor </label>
                                 <input type="text" id="autor_id" class="form-control" name="autor">
                             </div>
                             <div class="form-group">
-                                <i class="fa fa-check prefix teal-text"></i><label for="genero_id">Gênero</label>
+                                <i class="fa fa-check prefix "></i><label for="genero_id">Gênero</label>
                                 <input type="text" id="genero_id" class="form-control" name="genero">
                             </div>
 
@@ -87,7 +87,7 @@
                             </select>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn teal darken-4"> Enviar </button>
+                                <button type="submit" class="btn"> Enviar </button>
                             </div>
                             
                         </form>

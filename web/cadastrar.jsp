@@ -21,32 +21,32 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <div class="card mx-auto mt-2" style="width: 28rem;">
-                    <div class="card-header default-color">
+                    <div class="card-header white-text">
                         <h3><i class="fa fa-lock"></i> Cadastro</h3>
                     </div>
                     <div class="card-body">
                 <form action="controller" method="post" role="form">
                     <input type="hidden" name="tarefa" value="Cadastrar">
                     <div class="md-form">
-                        <i class="fa fa-user prefix grey-text"></i>
+                        <i class="fa fa-user prefix black-text"></i>
                         <input type="text" id="nome" class="form-control" name="nome">
                         <label for="nome">Nome </label>
                     </div>
                     
                      <div class="md-form">
-                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <i class="fa fa-envelope prefix black-text"></i>
                         <input type="text" id="email" class="form-control" name="email">
                         <label for="email">Email </label>
                     </div>
                     
                     <div class="md-form">
-                        <i class="fa fa-lock prefix grey-text"></i>
+                        <i class="fa fa-lock prefix black-text"></i>
                         <input type="password" id="senha" class="form-control" name="senha">
                         <label for="senha">Senha </label>
                     </div>
                     
                     <div class="md-form">
-                        <i class="fa fa-lock prefix grey-text"></i>
+                        <i class="fa fa-lock prefix black-text"></i>
                         <input type="password" id="confirma" class="form-control" name="confirma-senha">
                         <label for="confirma">Confirma </label>
                     </div>

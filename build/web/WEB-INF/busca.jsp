@@ -25,7 +25,7 @@
 </head>
 <body>
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark stylish-color">
+<nav class="navbar navbar-expand-lg navbar-dark ">
 
     <!-- Navbar brand -->
     <a class="navbar-brand" href="#">Recomenda Livros</a>
@@ -67,7 +67,7 @@
     <div class="col-md-8 mx-auto align-middle">
     <c:forEach var="livro" items="${livro}">
     <div class="card mx-auto align-middle">
-    <div class="card-header teal darken-4">
+    <div class="card-header">
         <h4 class="white-text"><i class="fa fa-search "></i> Resultado - ${livro.titulo}</h4>
     </div>
     <div class="card-body">

@@ -3,3 +3,11 @@ body{
     background: url('../img/img2.jpg') #000 no-repeat fixed center;
 }
 
+.card-header, .btn, .navbar{
+   background-color: #660000;
+}
+
+.prefix{
+    font-color: #660000;
+    font-size: 22px;
+}

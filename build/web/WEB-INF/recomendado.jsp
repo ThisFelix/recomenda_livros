@@ -27,7 +27,7 @@
     <div class="col-md-4 mx-auto"></div>
     <div class="col-md-4 mx-auto align-middle">
         <div class="card mx-auto">
-                    <div class="card-header teal darken-4 white-text">
+                    <div class="card-header white-text">
                         <h3><i class="fa fa-check"></i> Livro Recomendado Com Sucesso</h3>
                     </div>
                     <div class="card-body">
