@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Gerenciador de Atividades - Index</title>
+    <title>Recomenda Livros - Inserir</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -31,9 +31,14 @@
 
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="main.jsp">Home <span class="sr-only">(current)</span></a>
-            </li>
+            <form class="form-inline"  action="controller" method="POST" name="Home">
+                        <input type="hidden" name="tarefa" value="Main">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="javascript:Home.submit()">Home</a>
+                           </li> 
+                        </ul>
+            </form>
         </ul>
         <!-- Links -->
         <form class="form-inline"  action="controller" method="POST" name="sair">

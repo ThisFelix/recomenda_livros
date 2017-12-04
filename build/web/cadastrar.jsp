@@ -54,6 +54,7 @@
                     <div class="text-center">
                         <button type="submit" class="btn btn-default">Cadastrar</button>
                     </div>
+                    <a href="index.jsp">Voltar</a>
                    </div>
                 </div>
             </div>

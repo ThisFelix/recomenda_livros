@@ -10,7 +10,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>Corrigir</servlet-name>
-        <servlet-class>ifsp.pwe.contatos.servlets.Corrigir</servlet-class>
+        <servlet-class>ifsp.pwe.contatos.servlets.Recomendar</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Corrigir</servlet-name>

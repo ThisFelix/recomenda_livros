@@ -10,14 +10,13 @@ package ifsp.pwe.contatos.beans;
  * @author joao
  */
 public class Indicacao {
-    String observacao;
-    int codigo_livro, codigo_usuario;
+    int codigo_livro, codigo_usuario, codigo_recomendado;
     int id; 
    
-    public Indicacao(int codigo_livro, String observa, int codigo_usuario) {
-        this.observacao = observa;
+    public Indicacao(int codigo_livro, int codigo_recomendado, int codigo_usuario) {
         this.codigo_livro = codigo_livro;
         this.codigo_usuario = codigo_usuario;
+        this.codigo_recomendado = codigo_recomendado;
     }
 
     public int getCodigo_livro() {
@@ -28,14 +27,19 @@ public class Indicacao {
         return codigo_usuario;
     }
 
+    public int getCodigo_recomendado() {
+        return codigo_recomendado;
+    }
+    
     public int getId() {
         return id;
     }
 
-    public String getObservacao() {
-        return observacao;
+    public void setCodigo_recomendado(int codigo_recomendado) {
+        this.codigo_recomendado = codigo_recomendado;
     }
 
+    
     public void setCodigo_livro(int codigo_livro) {
         this.codigo_livro = codigo_livro;
     }
@@ -46,10 +50,6 @@ public class Indicacao {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public void setObservacao(String observacao) {
-        this.observacao = observacao;
     }
 
 }

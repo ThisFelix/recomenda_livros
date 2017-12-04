@@ -67,7 +67,7 @@
     <div class="card mx-auto mt-12">
     <div class="card-body">
     <form action="controller" method="GET">
-        <input type="hidden" name="tarefa" value="BuscaAtividade">
+        <input type="hidden" name="tarefa" value="BuscaLivro">
         <div class="input-group add-on">
         <input class="form-control" placeholder="Search" name="filtro" id="srch-term" type="text">
         <div class="input-group-btn">

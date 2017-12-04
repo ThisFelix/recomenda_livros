@@ -30,9 +30,15 @@
                     <div class="card-header teal darken-4 white-text">
                         <h3><i class="fa fa-check"></i> Livro: ${livro.titulo} Cadastrado</h3>
                     </div>
-                    <div class="card-body">
-                           Voltar para o menu <a href="Main.jsp">login</a>
-                    </div>
+                     <form class="form-inline"  action="controller" method="POST" name="Home">
+                        <input type="hidden" name="tarefa" value="Main">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item ">
+                                  Voltar para a <a class="nav-link" href="javascript:Home.submit()">Home</a>
+                           </li> 
+                        </ul>
+                    </form>
+                           
         </div>
      </div>
     <div class="col-md-4 mx-auto"></div>

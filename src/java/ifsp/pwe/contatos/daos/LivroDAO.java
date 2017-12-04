@@ -39,7 +39,7 @@ public class LivroDAO {
 
         ResultSet rs = stmt.executeQuery();
         while (rs.next()) {
-        int id = rs.getInt("id");
+        int id = rs.getInt("id_livro");
         Livro livro = new Livro(rs.getString("titulo"), rs.getString("autor"), rs.getString("genero"));
         livro.setId(id);
         similares.add(livro);
@@ -76,7 +76,7 @@ public class LivroDAO {
         
         int id = 0;
 
-        PreparedStatement stmt = this.connection.prepareStatement("SELECT id FROM livro WHERE titulo LIKE '%" + nome + "%'");
+        PreparedStatement stmt = this.connection.prepareStatement("SELECT id_livro FROM livro WHERE titulo LIKE '%" + nome + "%'");
 
         if (nome == null) {
             id = 0;
@@ -84,7 +84,7 @@ public class LivroDAO {
 
         ResultSet rs = stmt.executeQuery();
         while (rs.next()) {
-            id = rs.getInt("id");
+            id = rs.getInt("id_livro");
         }
         rs.close();
         stmt.close();

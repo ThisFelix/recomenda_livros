@@ -6,19 +6,13 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%-- 
-    Document   : Main_Corretor
-    Created on : 07/09/2017, 21:32:51
-    Author     : Félix
---%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Gerenciador de Atividades - Home</title>
+    <title>Recomenda Livros - Home</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -34,7 +28,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark stylish-color">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Gerenciador de Atividades</a>
+    <a class="navbar-brand" href="#">Recomenda Livros</a>
 
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -45,14 +39,16 @@
 
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
+            <form class="form-inline"  action="controller" method="POST" name="Home">
+                        <input type="hidden" name="tarefa" value="Main">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="javascript:Home.submit()">Home</a>
+                           </li> 
+                        </ul>
+            </form>
             <li class="nav-item">
-                <a class="nav-link" href="#">Inserir<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Corrigir<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="inserir.jsp">Inserir<span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <form class="form-inline"  action="controller" method="POST" name="sair">
@@ -69,28 +65,22 @@
 <div class="mt-3 row">           
     <div class="col-md-2 mx-auto"></div>
     <div class="col-md-8 mx-auto align-middle">
-    <c:forEach var="atividade" items="${atividade}">
+    <c:forEach var="livro" items="${livro}">
     <div class="card mx-auto align-middle">
     <div class="card-header teal darken-4">
-        <h4 class="white-text"><i class="fa fa-search "></i> Resultado - ${atividade.titulo}</h4>
+        <h4 class="white-text"><i class="fa fa-search "></i> Resultado - ${livro.titulo}</h4>
     </div>
     <div class="card-body">
-        <h4><p class="text-justify">${atividade.corpo}</p></h4>   
-        <h5 class="text-right"><p>Publicado em: ${atividade.data}</p></h5>
+        <h4><p class="text-justify">${livro.autor}</p></h4>   
+        <h5 class="text-right"><p>${livro.genero}</p></h5>
     <hr>
     
     <div class="list-group">
-      <c:forEach var="corr" items="${correcoes}">
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Nota: ${corr.nota}</h5>
-          <small></small>
+    </div>
+    </div>
+        <div class="card-footer">
+                    <a class="nav-link" href="recomendar.jsp?id_livro=${livro.id}&autor=${livro.autor}&genero=${livro.genero}&titulo=${livro.titulo}">Recomendar<span class="sr-only">(current)</span></a>
         </div>
-        <p class="mb-1">${corr.observacao}</p>
-      </a>
-    </c:forEach>  
-    </div>
-    </div>
     </div>
     </c:forEach>
     </div>

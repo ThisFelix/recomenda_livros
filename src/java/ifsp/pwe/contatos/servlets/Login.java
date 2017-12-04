@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Giovani
+ * @author Felix
  */
 public class Login implements Tarefa {
 
@@ -53,7 +53,7 @@ public class Login implements Tarefa {
                     Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 url =  "/WEB-INF/paginas/Main.jsp";
-                session.setAttribute("userAtv", similares);
+                session.setAttribute("livros", similares);
               
             
             session.setAttribute("usuarioLogado", usuario);
