@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Dez-2017 às 04:19
--- Versão do servidor: 10.1.21-MariaDB
--- PHP Version: 7.1.1
+-- Generation Time: 07-Dez-2017 às 00:10
+-- Versão do servidor: 10.1.16-MariaDB
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -41,19 +41,10 @@ INSERT INTO `lista_livros` (`id_lista`, `cod_livro`, `cod_usuario`, `status`) VA
 (1, 1, 1, 1),
 (2, 2, 2, 3),
 (3, 2, 1, 2),
-(5, 4, 3, 2),
-(6, 4, 3, 2),
+(5, 4, 3, 1),
 (7, 1, 3, 2),
-(8, 1, 3, 2),
-(19, 1, 3, 2),
-(20, 1, 3, 2),
-(21, 1, 3, 2),
-(22, 1, 3, 2),
-(23, 1, 3, 2),
-(24, 1, 3, 2),
-(25, 1, 3, 2),
 (26, 4, 2, 2),
-(27, 1, 3, 2);
+(28, 5, 4, 2);
 
 -- --------------------------------------------------------
 
@@ -75,7 +66,8 @@ CREATE TABLE `livro` (
 INSERT INTO `livro` (`id_livro`, `titulo`, `autor`, `genero`) VALUES
 (1, 'O Código Da Vinci', 'Dan Brown', 'Suspense'),
 (2, 'Laranja Mecânica', 'Anthony Burgess', 'Ficção Utópica e Distópica\r\n'),
-(4, 'Forrest Gump', 'Winston Groom', 'Ficção');
+(4, 'Forrest Gump', 'Winston Groom', 'Ficção'),
+(5, 'Java Web', 'Giovanni Ravagnani', 'Programação');
 
 -- --------------------------------------------------------
 
@@ -143,7 +135,8 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`id_usuario`, `email`, `senha`, `nome`) VALUES
 (1, 'felix@felix.com', '1234', 'Matheus'),
 (2, 'thais.zottele@gmail.com', '123456', 'Thaís'),
-(3, 'mat@felix.com', '1234', 'Matheus F.');
+(3, 'mat@felix.com', '1234', 'Matheus F.'),
+(4, 'giovanni@ifsp.edu.br', '1234', 'Felix');
 
 --
 -- Indexes for dumped tables
@@ -190,12 +183,12 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `lista_livros`
 --
 ALTER TABLE `lista_livros`
-  MODIFY `id_lista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_lista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `livro`
 --
 ALTER TABLE `livro`
-  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `livro_status`
 --
@@ -210,7 +203,7 @@ ALTER TABLE `recomendacao`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
