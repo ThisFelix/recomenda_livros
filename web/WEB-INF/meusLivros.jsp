@@ -1,22 +1,18 @@
-<!DOCTYPE html>
+<%-- 
+    Document   : busca
+    Created on : Aug 8, 2017, 9:46:41 PM
+    Author     : Félix
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import = "java.io.*,java.util.*,java.sql.*"%>
-<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
-<sql:setDataSource var = "conexao" driver = "com.mysql.jdbc.Driver"
-         url = "jdbc:mysql://localhost/recomenda_livros"
-         user = "root"  password = ""/>
-         
-         <sql:query dataSource = "${conexao}" var = "result">
-            SELECT * FROM usuario
-         </sql:query> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Recomenda Livros - Recomendar</title>
+    <title>Recomenda Livros</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -28,6 +24,7 @@
     
 </head>
 <body>
+<!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark">
 
     <!-- Navbar brand -->
@@ -74,50 +71,28 @@
     </div>
     <!-- Collapsible content -->
 </nav>
-<!--/.Navbar-->
-        <div class="container"> 
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8 mt-2">
-                <div class="card mx-auto">
-                    <div class="card-header white-text">
-                        <h3><i class="fa fa-book"></i> Recomendar Livro</h3>
-                    </div>
-                    <div class="card-body">
-                       <form action="controller" method="POST">
-                            <input type="hidden" name="tarefa" value="Recomendar">
-                            <input type="hidden" name="id_livro" value="${param.id_livro}">
-                            <div class="form-group">
-                                <i class="fa fa-pencil prefix teal-text"></i>&nbsp;<label for="titulo_id">Titulo </label>
-                                <input type="text" id="titulo_id" class="form-control" name="titulo" disabled value="${param.titulo}">
-                            </div>
-                            <div class="form-group">
-                                <i class="fa fa-user prefix teal-text"></i>&nbsp;<label for="autor_id">Autor </label>
-                                <input type="text" id="autor_id" class="form-control" name="autor" disabled value="${param.autor}">
-                            </div>
-                            <div class="form-group">
-                                <i class="fa fa-check prefix teal-text"></i><label for="genero_id">Gênero</label>
-                                <input type="text" id="genero_id" class="form-control" name="genero" disabled value="${param.genero}">
-                            </div>
-                            <div class="form-group">
-                            <label for="sel1">Usuario</label>
-                            <select name="codigo_recomendado" class="form-control" id="sel1">
-                                <c:forEach var="usuario" items="${result.rows}">
-                                    <option value="${usuario.id_usuario}"><c:out value="${usuario.nome}" /></option>
-                                </c:forEach>
-                            </select>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn teal darken-4"> Enviar </button>
-                            </div>
-                            
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2"></div>
-        </div>
+<div class="mt-3 row">           
+    <div class="col-md-2 mx-auto"></div>
+    <div class="col-md-8 mx-auto align-middle">
+    <c:forEach var="meusLivros" items="${meusLivros}">
+    <div class="card mx-auto align-middle">
+    <div class="card-header">
+        <h4 class="white-text"><i class="fa fa-search "></i> &nbsp;${meusLivros.titulo}</h4>
     </div>
+    <div class="card-body">
+        Autor : ${meusLivros.autor}<br>
+        Gênero: ${meusLivros.genero}<br>
+        Status: ${meusLivros.status}
+        <a class="nav-link" href="editar.jsp?id_livro=${meusLivros.id}&status=${meusLivros.status}&autor=${meusLivros.autor}&titulo=${meusLivros.titulo}&genero=${meusLivros.genero}">Editar<span class="sr-only">(current)</span></a>
+    </div>
+    </div>
+    <br>
+    </c:forEach>
+       
+    </div>
+    <div class="col-md-2 mx-auto"></div>
+</div> 
+
         <!-- SCRIPTS -->
         <!-- JQuery -->
         <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
@@ -129,3 +104,5 @@
         <script type="text/javascript" src="js/mdb.min.js"></script>
     </body>
 </html>
+          
+       

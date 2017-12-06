@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Recomenda Livros - Home</title>
+    <title>Recomenda Livros</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -25,7 +25,7 @@
 </head>
 <body>
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark ">
+<nav class="navbar navbar-expand-lg navbar-dark">
 
     <!-- Navbar brand -->
     <a class="navbar-brand" href="#">Recomenda Livros</a>
@@ -47,9 +47,18 @@
                            </li> 
                         </ul>
             </form>
-            <li class="nav-item">
-                <a class="nav-link" href="inserir.jsp">Inserir<span class="sr-only">(current)</span></a>
+            <li class="nav-item ">
+                    <a class="nav-link" href="inserir.jsp">Inserir<span class="sr-only">(current)</span></a>
             </li>
+                <form class="form-inline"  action="controller" method="POST" name="meusLivros">
+                <input type="hidden" name="tarefa" value="MeusLivros">
+            
+                <li class="nav-item ">
+                      <a class="nav-link" href="javascript:meusLivros.submit()">MeusLivros</a>
+               </li> 
+            
+        </form>
+  
         </ul>
         <form class="form-inline"  action="controller" method="POST" name="sair">
         <input type="hidden" name="tarefa" value="Logout">

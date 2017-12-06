@@ -65,7 +65,7 @@ public class LivroDAO {
             id_atv = rs.getInt("id_livro");
             Livro livro = new Livro(rs.getString("titulo"), rs.getString("autor"), rs.getString("genero"));
             livro.setId(id_atv);
-            livro.setStatus(rs.getString("status"));
+            livro.setStatus(rs.getString("descricao_status"));
             similares.add(livro);
         }
         rs.close();
@@ -158,5 +158,14 @@ public class LivroDAO {
         rs.close();
         stmt.close();
         return similares;
+    }
+    
+    public static void edita(int id_livro, int usuario, int status) throws SQLException {
+        
+        String sql = "UPDATE lista_livros SET status = "+status+" WHERE cod_livro ="+id_livro+" AND cod_usuario = "+usuario+" AND status != "+status;
+        PreparedStatement stmt = connection.prepareStatement(sql);
+        System.out.println(sql);   
+        stmt.execute(sql);
+        stmt.close();
     }
 }

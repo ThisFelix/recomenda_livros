@@ -9,6 +9,22 @@
         <url-pattern>/novoContato</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>MeusLivros</servlet-name>
+        <servlet-class>ifsp.pwe.contatos.servlets.MeusLivros</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MeusLivros</servlet-name>
+        <url-pattern>/meusLivros</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AceitaRecomenda</servlet-name>
+        <servlet-class>ifsp.pwe.contatos.servlets.AceitaRecomenda</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AceitaRecomenda</servlet-name>
+        <url-pattern>/AceitaRecomenda</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>Corrigir</servlet-name>
         <servlet-class>ifsp.pwe.contatos.servlets.Recomendar</servlet-class>
     </servlet>

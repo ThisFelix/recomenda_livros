@@ -1,7 +1,7 @@
 package ifsp.pwe.contatos.servlets;
 
-import ifsp.pwe.contatos.beans.Livro;
 import ifsp.pwe.contatos.beans.Indicacao;
+import ifsp.pwe.contatos.beans.Livro;
 import ifsp.pwe.contatos.beans.Usuario;
 import ifsp.pwe.contatos.daos.LivroDAO;
 import ifsp.pwe.contatos.daos.RecomendacaoDAO;
@@ -13,36 +13,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Giovani
- */
-public class BuscaLivro implements Tarefa {
+public class Editar implements Tarefa{
 
     @Override
     public String executa(HttpServletRequest req, HttpServletResponse resp) {
-         
         HttpSession session = req.getSession();
-        Collection<Livro> similares = null;
         Usuario user = (Usuario) session.getAttribute("usuarioLogado");
-        
-        
+
+        int id_livro = Integer.parseInt(req.getParameter("id_livro"));
+        int status = Integer.parseInt(req.getParameter("status"));
+        int usuario = user.getId();
+     
         try {
-            similares = new LivroDAO().buscaSimilar(req.getParameter("filtro"));
-            int id = new LivroDAO().buscaId(req.getParameter("filtro"));
-            
-            System.out.println(id);
-            
+            new LivroDAO().edita(id_livro, usuario, status);
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(BuscaLivro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NovoLivro.class.getName()).log(Level.SEVERE, null, ex);
         }
-        req.setAttribute("livro", similares);
         
-        return "WEB-INF/busca.jsp";
+        String url = new MeusLivros().executa(req, resp);
+        
+        return url;
     }
     
-    public String metodoTeste(HttpServletRequest req, HttpServletResponse resp) {
-        System.out.println("Entrei no método de teste!");
-        return "WEB-INF/paginas/Main.jsp";
-    }
 }
+

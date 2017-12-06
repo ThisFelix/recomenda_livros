@@ -28,11 +28,10 @@
     
 </head>
 <body>
-<!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark teal darken-4">
+<nav class="navbar navbar-expand-lg navbar-dark">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="">Gerenciador de Atividades</a>
+    <a class="navbar-brand" href="#">Recomenda Livros</a>
 
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -43,13 +42,29 @@
 
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="main.jsp">Home <span class="sr-only">(current)</span></a>
+            <form class="form-inline"  action="controller" method="POST" name="Home">
+                        <input type="hidden" name="tarefa" value="Main">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="javascript:Home.submit()">Home</a>
+                           </li> 
+                        </ul>
+            </form>
+            <li class="nav-item ">
+                    <a class="nav-link" href="inserir.jsp">Inserir<span class="sr-only">(current)</span></a>
             </li>
+                <form class="form-inline"  action="controller" method="POST" name="meusLivros">
+                <input type="hidden" name="tarefa" value="MeusLivros">
+            
+                <li class="nav-item ">
+                      <a class="nav-link" href="javascript:meusLivros.submit()">MeusLivros</a>
+               </li> 
+            
+        </form>
+  
         </ul>
-        <!-- Links -->
         <form class="form-inline"  action="controller" method="POST" name="sair">
-            <input type="hidden" name="tarefa" value="Logout">
+        <input type="hidden" name="tarefa" value="Logout">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
                       <a class="nav-link" href="javascript:sair.submit()">Sair</a>
@@ -65,7 +80,7 @@
             <div class="col-md-2"></div>
             <div class="col-md-8 mt-2">
                 <div class="card mx-auto">
-                    <div class="card-header teal darken-4 white-text">
+                    <div class="card-header white-text">
                         <h3><i class="fa fa-book"></i> Recomendar Livro</h3>
                     </div>
                     <div class="card-body">

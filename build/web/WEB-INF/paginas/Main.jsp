@@ -16,7 +16,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Gerenciador de Atividades</title>
+    <title>Recomenda Livros</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -32,7 +32,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Gerenciador de Atividades</a>
+    <a class="navbar-brand" href="#">Recomenda Livros</a>
 
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -43,19 +43,26 @@
 
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-        <li class="nav-item">
-        
-            
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
+            <form class="form-inline"  action="controller" method="POST" name="Home">
+                        <input type="hidden" name="tarefa" value="Main">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="javascript:Home.submit()">Home</a>
+                           </li> 
+                        </ul>
+            </form>
+            <li class="nav-item ">
                     <a class="nav-link" href="inserir.jsp">Inserir<span class="sr-only">(current)</span></a>
-               </li> 
-            </ul>
-               
             </li>
+                <form class="form-inline"  action="controller" method="POST" name="meusLivros">
+                <input type="hidden" name="tarefa" value="MeusLivros">
+            
+                <li class="nav-item ">
+                      <a class="nav-link" href="javascript:meusLivros.submit()">MeusLivros</a>
+               </li> 
+            
+        </form>
+  
         </ul>
         <form class="form-inline"  action="controller" method="POST" name="sair">
         <input type="hidden" name="tarefa" value="Logout">

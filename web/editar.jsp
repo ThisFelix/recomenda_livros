@@ -1,22 +1,19 @@
+<%-- 
+    Document   : editar
+    Created on : 06/12/2017, 20:49:21
+    Author     : Felix
+--%>
+
 <!DOCTYPE html>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import = "java.io.*,java.util.*,java.sql.*"%>
-<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
-<sql:setDataSource var = "conexao" driver = "com.mysql.jdbc.Driver"
-         url = "jdbc:mysql://localhost/recomenda_livros"
-         user = "root"  password = ""/>
-         
-         <sql:query dataSource = "${conexao}" var = "result">
-            SELECT * FROM usuario
-         </sql:query> 
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Recomenda Livros - Recomendar</title>
+    <title>Recomenda Livros - Editar</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -28,6 +25,7 @@
     
 </head>
 <body>
+<!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark">
 
     <!-- Navbar brand -->
@@ -85,8 +83,9 @@
                     </div>
                     <div class="card-body">
                        <form action="controller" method="POST">
-                            <input type="hidden" name="tarefa" value="Recomendar">
+                            <input type="hidden" name="tarefa" value="Editar">
                             <input type="hidden" name="id_livro" value="${param.id_livro}">
+                            
                             <div class="form-group">
                                 <i class="fa fa-pencil prefix teal-text"></i>&nbsp;<label for="titulo_id">Titulo </label>
                                 <input type="text" id="titulo_id" class="form-control" name="titulo" disabled value="${param.titulo}">
@@ -96,15 +95,15 @@
                                 <input type="text" id="autor_id" class="form-control" name="autor" disabled value="${param.autor}">
                             </div>
                             <div class="form-group">
-                                <i class="fa fa-check prefix teal-text"></i><label for="genero_id">GÃªnero</label>
+                                <i class="fa fa-check prefix teal-text"></i><label for="genero_id">Gênero</label>
                                 <input type="text" id="genero_id" class="form-control" name="genero" disabled value="${param.genero}">
                             </div>
                             <div class="form-group">
-                            <label for="sel1">Usuario</label>
-                            <select name="codigo_recomendado" class="form-control" id="sel1">
-                                <c:forEach var="usuario" items="${result.rows}">
-                                    <option value="${usuario.id_usuario}"><c:out value="${usuario.nome}" /></option>
-                                </c:forEach>
+                            <label for="sel1">Status</label>
+                            <select name="status" class="form-control" id="sel1">
+                                <option value="1">Lido</option>
+                                <option value="2">Leitura Não Iniciada</option>
+                                <option value="3">Em Leitura</option>
                             </select>
                             </div>
                             <div class="text-center">
