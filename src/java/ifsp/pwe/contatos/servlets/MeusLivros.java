@@ -40,6 +40,7 @@ public class MeusLivros implements Tarefa{
             Logger.getLogger(BuscaLivro.class.getName()).log(Level.SEVERE, null, ex);
         }
         req.setAttribute("meusLivros", similares);
+        session.setAttribute("usuarioLogado", user);
         
         return "WEB-INF/meusLivros.jsp";
     }

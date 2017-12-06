@@ -9,9 +9,7 @@ import ifsp.pwe.contatos.beans.Livro;
 import ifsp.pwe.contatos.beans.Usuario;
 import ifsp.pwe.contatos.daos.LivroDAO;
 import ifsp.pwe.contatos.daos.RecomendacaoDAO;
-import ifsp.pwe.contatos.daos.UsuarioDAO;
 import java.sql.SQLException;
-import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
@@ -30,8 +28,6 @@ public class AceitarRecomenda implements Tarefa{
         HttpSession session = req.getSession();
         Usuario user = (Usuario) session.getAttribute("usuarioLogado");
        
-       
-        
         int cod_livro = Integer.parseInt(req.getParameter("cod_livro"));
         int cod_recomendado = Integer.parseInt(req.getParameter("cod_recomendado"));
         int cod_recomendador = Integer.parseInt(req.getParameter("cod_recomendador"));

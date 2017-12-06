@@ -30,7 +30,7 @@ public class Recomendar implements Tarefa{
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(NovoLivro.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        session.setAttribute("usuarioLogado", user);
         req.setAttribute("adicionado", indica);
         return "WEB-INF/recomendado.jsp";
     }

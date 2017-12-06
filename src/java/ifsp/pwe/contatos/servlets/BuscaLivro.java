@@ -37,6 +37,7 @@ public class BuscaLivro implements Tarefa {
             Logger.getLogger(BuscaLivro.class.getName()).log(Level.SEVERE, null, ex);
         }
         req.setAttribute("livro", similares);
+        session.setAttribute("usuarioLogado", user);
         
         return "WEB-INF/busca.jsp";
     }

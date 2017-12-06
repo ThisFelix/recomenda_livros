@@ -29,6 +29,7 @@ public class NovoLivro implements Tarefa {
             Logger.getLogger(NovoLivro.class.getName()).log(Level.SEVERE, null, ex);
         }
         req.setAttribute("atividade", livro);
+        session.setAttribute("usuarioLogado", user);
         
         return "WEB-INF/adicionado.jsp";
     }    

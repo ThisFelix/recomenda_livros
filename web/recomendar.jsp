@@ -7,9 +7,10 @@
 <sql:setDataSource var = "conexao" driver = "com.mysql.jdbc.Driver"
          url = "jdbc:mysql://localhost/recomenda_livros"
          user = "root"  password = ""/>
+
          
          <sql:query dataSource = "${conexao}" var = "result">
-            SELECT * FROM usuario
+            SELECT * FROM usuario WHERE id_usuario != <c:out value="${param.user}"/>
          </sql:query> 
 <html lang="en">
 <head>
@@ -81,7 +82,7 @@
         <div class="container"> 
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-8 mt-2">
+            <div class="col-md-8 mt-3">
                 <div class="card mx-auto">
                     <div class="card-header white-text">
                         <h3><i class="fa fa-book"></i> Recomendar Livro</h3>
