@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Dez-2017 às 02:48
+-- Generation Time: 06-Dez-2017 às 04:19
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -41,7 +41,19 @@ INSERT INTO `lista_livros` (`id_lista`, `cod_livro`, `cod_usuario`, `status`) VA
 (1, 1, 1, 1),
 (2, 2, 2, 3),
 (3, 2, 1, 2),
-(5, 4, 3, 2);
+(5, 4, 3, 2),
+(6, 4, 3, 2),
+(7, 1, 3, 2),
+(8, 1, 3, 2),
+(19, 1, 3, 2),
+(20, 1, 3, 2),
+(21, 1, 3, 2),
+(22, 1, 3, 2),
+(23, 1, 3, 2),
+(24, 1, 3, 2),
+(25, 1, 3, 2),
+(26, 4, 2, 2),
+(27, 1, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -104,16 +116,12 @@ CREATE TABLE `recomendacao` (
 --
 
 INSERT INTO `recomendacao` (`id_recomendacao`, `cod_recomendado`, `cod_livro`, `cod_recomendador`, `status_recomenda`) VALUES
-(1, 3, 4, 3, 'Não Visualizado'),
-(2, 3, 1, 2, 'Não Visualizado'),
+(1, 3, 4, 3, 'Aceito'),
+(2, 3, 1, 2, 'Aceito'),
 (3, 3, 1, 3, 'Não Visualizado'),
-(4, 3, 1, 1, 'Não Visualizado'),
-(5, 1, 1, 3, 'Não Visualizado'),
-(6, 1, 1, 3, 'Não Visualizado'),
-(7, 1, 1, 3, 'Não Visualizado'),
-(8, 1, 1, 3, 'Não Visualizado'),
-(9, 1, 1, 3, 'Não Visualizado'),
-(10, 2, 4, 3, 'Não Visualizado');
+(4, 3, 1, 1, 'Aceito'),
+(5, 1, 1, 3, 'Recusado'),
+(10, 2, 4, 3, 'Aceito');
 
 -- --------------------------------------------------------
 
@@ -182,7 +190,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `lista_livros`
 --
 ALTER TABLE `lista_livros`
-  MODIFY `id_lista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_lista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `livro`
 --

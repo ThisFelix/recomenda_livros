@@ -5,9 +5,9 @@
  */
 package ifsp.pwe.contatos.servlets;
 
-import ifsp.pwe.contatos.beans.Livro;
+import ifsp.pwe.contatos.beans.Indicacao;
 import ifsp.pwe.contatos.beans.Usuario;
-import ifsp.pwe.contatos.daos.LivroDAO;
+import ifsp.pwe.contatos.daos.RecomendacaoDAO;
 import ifsp.pwe.contatos.daos.UsuarioDAO;
 import java.sql.SQLException;
 import java.util.Collection;
@@ -26,7 +26,7 @@ public class Login implements Tarefa {
     @Override
     public String executa(HttpServletRequest req, HttpServletResponse resp) {
         Usuario usuario = null;
-        Collection<Livro> similares = null;
+        Collection<Indicacao> similares = null;
         
         String email = req.getParameter("email");
         String senha = req.getParameter("senha");
@@ -48,12 +48,12 @@ public class Login implements Tarefa {
                 try {
                     cod_user = new UsuarioDAO().buscaId(email, senha);
                     System.out.print(cod_user);
-                    similares = new LivroDAO().buscaLivroPorUsuario(cod_user);
+                    similares = new RecomendacaoDAO().buscaRecomendacoes(cod_user);
                 } catch (ClassNotFoundException | SQLException ex) {
                     Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 url =  "/WEB-INF/paginas/Main.jsp";
-                session.setAttribute("livros", similares);
+                session.setAttribute("indicacao", similares);
               
             
             session.setAttribute("usuarioLogado", usuario);

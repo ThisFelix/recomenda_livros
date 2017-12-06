@@ -1,8 +1,15 @@
 <%-- 
     Document   : Main
     Created on : 07/09/2017, 21:32:51
-    Author     : F�lix
+    Author     : Félix
 --%>
+
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import = "java.io.*,java.util.*,java.sql.*"%>
+<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,13 +82,62 @@
         </div>
     </div>
     </form>
-    <hr>
-    <div class="list-group">
+    </div>
+        
+    </div>
+        <hr>
+        <div class="card mx-auto mt-12">
+    <div class="card-body">
+    <ul class="list-group">
+    <c:forEach var="indicacao" items="${indicacao}">  
     
+                
+    <li class="list-group-item d-flex  align-items-center list-font">
+        O usuario &nbsp;<b>${indicacao.nome_recomendador}</b> &nbsp;está te indicando o livro &nbsp;<b>${indicacao.titulo}</b>&nbsp;
+        <span class="btn-group">
+            <form class="form-inline"  action="controller" method="POST" name="aceitar">
+                <input type="hidden" name="tarefa" value="AceitarRecomenda">
+                <input type="hidden" name="cod_livro" value="${indicacao.codigo_livro}">
+                <input type="hidden" name="cod_recomendado" value="${indicacao.codigo_recomendado}">
+                <input type="hidden" name="cod_recomendador" value="${indicacao.codigo_recomendador}">
+                <input type="hidden" name="status" value="Aceito">
+                <input type="hidden" name="autor" value="${indicacao.autor}">
+                <input type="hidden" name="titulo" value="${indicacao.titulo}">
+                <input type="hidden" name="genero" value="${indicacao.genero}">
+                
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ">
+                            <input type="submit" class="btn btn-sm" value="Aceitar">
+                        </li> 
+                    </ul>
+            </form>
+  
+            <form class="form-inline"  action="controller" method="POST" name="recusar">
+                <input type="hidden" name="tarefa" value="AceitarRecomenda">
+                <input type="hidden" name="cod_livro" value="${indicacao.codigo_livro}">
+                <input type="hidden" name="cod_recomendado" value="${indicacao.codigo_recomendado}">
+                <input type="hidden" name="cod_recomendador" value="${indicacao.codigo_recomendador}">
+                <input type="hidden" name="status" value="Recusado">
+                <input type="hidden" name="autor" value="${indicacao.autor}">
+                <input type="hidden" name="titulo" value="${indicacao.titulo}">
+                <input type="hidden" name="genero" value="${indicacao.genero}">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ">
+                            <input type="submit" class="btn btn-sm" value="Recusar">
+                        </li>  
+                    </ul>
+            </form>
+  
+        </span>
+    </li>
+          
+        
+        
+    </c:forEach>
+    </ul>
+    </div></div>
     </div>
-    </div>
-    </div>
-    </div>
+ 
     <div class="col-md-2 mx-auto"></div>
 </div> 
     <!-- SCRIPTS -->

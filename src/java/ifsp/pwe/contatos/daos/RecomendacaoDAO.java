@@ -29,18 +29,24 @@ public class RecomendacaoDAO {
     public Collection<Indicacao> buscaRecomendacoes(int cod_usuario) throws SQLException {
         List<Indicacao> similares = new ArrayList<>();
 
-        PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM recomendacao WHERE cod_recomendado = " + cod_usuario+" AND status_recomenda='Não Visualizado'");
-
+        PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM recomendacao INNER JOIN livro ON cod_livro = livro.id_livro INNER JOIN usuario ON cod_recomendador = usuario.id_usuario WHERE cod_recomendado ="+cod_usuario+" AND status_recomenda= 'Não Visualizado' AND cod_recomendado != cod_recomendador");
         ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt("id_recomendacao");
                 String status = rs.getString("status_recomenda");
-                int codigo_recomendador = rs.getInt("codigo_recomendador");
+                int codigo_recomendador = rs.getInt("cod_recomendador");
                 int codigo_recomendado = rs.getInt("cod_recomendado");
                 int codigo_livro = rs.getInt("cod_livro");
                 
-                Indicacao corr = new Indicacao(codigo_livro, codigo_recomendado, codigo_recomendador);
+System.out.println(rs.getString("titulo"));
+Indicacao corr = new Indicacao(codigo_livro, codigo_recomendado, codigo_recomendador);
                 corr.setId(id);
+                corr.setAutor(rs.getString("autor"));
+                corr.setGenero(rs.getString("genero"));
+                corr.setTitulo(rs.getString("titulo"));
+                corr.setNome_recomendador(rs.getString("nome"));
+                corr.setStatus(status);
+                
                 similares.add(corr);
             }
         
@@ -61,4 +67,12 @@ public class RecomendacaoDAO {
         stmt.close();
     }
     
+    public static void edita_recomendacao(int id_livro, int usuario_recomendador, int usuario_recomendado, String status_recomenda) throws SQLException {
+        System.out.println(status_recomenda);
+        String sql = "UPDATE recomendacao SET status_recomenda = '"+status_recomenda+"' WHERE cod_livro = "+id_livro+" AND cod_recomendador = "+usuario_recomendador+" AND cod_recomendado = "+usuario_recomendado;
+        PreparedStatement stmt = connection.prepareStatement(sql);
+        System.out.println(sql);   
+        stmt.execute(sql);
+        stmt.close();
+    }
 }

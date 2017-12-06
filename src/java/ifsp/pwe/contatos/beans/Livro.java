@@ -10,7 +10,7 @@ package ifsp.pwe.contatos.beans;
  * @author Félix
  */
 public class Livro {
-    private long id;
+    private int id;
     private String titulo;
     private String autor;
     private String genero;
@@ -30,9 +30,15 @@ public class Livro {
         return genero;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+   
 
     public String getStatus() {
         return status;
@@ -50,9 +56,7 @@ public class Livro {
         this.genero = genero;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+   
 
     public void setStatus(String status) {
         this.status = status;

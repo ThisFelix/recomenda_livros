@@ -28,6 +28,7 @@ public class LivroDAO {
         this.connection = new ConnectionFactory().getConnection();
     }
 
+   
     public Collection<Livro> buscaSimilar(String nome) throws SQLException {
         List<Livro> similares = new ArrayList<>();
 
@@ -132,7 +133,7 @@ public class LivroDAO {
         
         String sql = "insert into lista_livros (cod_livro, cod_usuario, status) values (?,?,?)";
         PreparedStatement stmt = connection.prepareStatement(sql);
-        stmt.setString(1, livro.getTitulo());
+        stmt.setInt(1, livro.getId());
         stmt.setInt(2, user.getId());
         stmt.setInt(3, status);
         stmt.execute();
