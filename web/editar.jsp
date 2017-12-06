@@ -3,13 +3,14 @@
     Created on : 06/12/2017, 20:49:21
     Author     : Felix
 --%>
-
 <!DOCTYPE html>
-
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <html lang="en">
 <head>
+    <meta Http-Equiv="Cache-Control" Content="no-cache">  
+    <meta Http-Equiv="Pragma" Content="no-cache">  
+    <meta Http-Equiv="Expires" Content="0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">

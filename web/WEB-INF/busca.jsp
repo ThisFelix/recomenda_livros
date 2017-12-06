@@ -3,12 +3,14 @@
     Created on : Aug 8, 2017, 9:46:41 PM
     Author     : Félix
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta Http-Equiv="Cache-Control" Content="no-cache">  
+    <meta Http-Equiv="Pragma" Content="no-cache">  
+    <meta Http-Equiv="Expires" Content="0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -88,7 +90,7 @@
     </div>
     </div>
         <div class="card-footer">
-                    <a class="nav-link" href="recomendar.jsp?id_livro=${livro.id}&autor=${livro.autor}&genero=${livro.genero}&titulo=${livro.titulo}">Recomendar<span class="sr-only">(current)</span></a>
+                    <a class="nav-link btn-sm btn" href="recomendar.jsp?id_livro=${livro.id}&autor=${livro.autor}&genero=${livro.genero}&titulo=${livro.titulo}">Recomendar<span class="sr-only">(current)</span></a>
         </div>
     </div>
     </c:forEach>

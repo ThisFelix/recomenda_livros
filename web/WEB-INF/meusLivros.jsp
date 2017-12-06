@@ -9,6 +9,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta Http-Equiv="Cache-Control" Content="no-cache">  
+    <meta Http-Equiv="Pragma" Content="no-cache">  
+    <meta Http-Equiv="Expires" Content="0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -83,7 +86,8 @@
         Autor : ${meusLivros.autor}<br>
         Gênero: ${meusLivros.genero}<br>
         Status: ${meusLivros.status}
-        <a class="nav-link" href="editar.jsp?id_livro=${meusLivros.id}&status=${meusLivros.status}&autor=${meusLivros.autor}&titulo=${meusLivros.titulo}&genero=${meusLivros.genero}">Editar<span class="sr-only">(current)</span></a>
+        <a class="nav-link btn btn-sm btn-edit" href="editar.jsp?id_livro=${meusLivros.id}&status=${meusLivros.status}&autor=${meusLivros.autor}&titulo=${meusLivros.titulo}&genero=${meusLivros.genero}">Editar<span class="sr-only">(current)</span></a>
+        <a class="nav-link btn btn-sm btn-recomenda" href="recomendar.jsp?id_livro=${meusLivros.id}&autor=${meusLivros.autor}&genero=${meusLivros.genero}&titulo=${meusLivros.titulo}">Recomendar<span class="sr-only">(current)</span></a>
     </div>
     </div>
     <br>

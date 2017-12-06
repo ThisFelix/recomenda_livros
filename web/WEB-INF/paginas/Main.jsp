@@ -4,7 +4,6 @@
     Author     : Félix
 --%>
 
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import = "java.io.*,java.util.*,java.sql.*"%>
 <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
@@ -13,6 +12,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta Http-Equiv="Cache-Control" Content="no-cache">  
+    <meta Http-Equiv="Pragma" Content="no-cache">  
+    <meta Http-Equiv="Expires" Content="0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">

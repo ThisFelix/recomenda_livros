@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<meta Http-Equiv="Cache-Control" Content="no-cache">  
+<meta Http-Equiv="Pragma" Content="no-cache">  
+<meta Http-Equiv="Expires" Content="0">
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -13,7 +16,6 @@
     <link href="assets/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="assets/css/style.css" rel="stylesheet">
-    
 </head>
 <body>
     <div class="container"> 
