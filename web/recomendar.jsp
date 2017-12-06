@@ -10,7 +10,7 @@
 
          
          <sql:query dataSource = "${conexao}" var = "result">
-            SELECT * FROM usuario WHERE id_usuario != <c:out value="${param.user}"/>
+            SELECT * FROM usuario"/>
          </sql:query> 
 <html lang="en">
 <head>
