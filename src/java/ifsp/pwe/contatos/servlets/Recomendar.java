@@ -32,6 +32,7 @@ public class Recomendar implements Tarefa{
         }
         session.setAttribute("usuarioLogado", user);
         req.setAttribute("adicionado", indica);
+        
         return "WEB-INF/recomendado.jsp";
     }
     

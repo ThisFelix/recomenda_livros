@@ -62,11 +62,12 @@ public class AceitarRecomenda implements Tarefa{
         
         
         }
+        req.setAttribute("email", user.getEmail());
+        req.setAttribute("senha", user.getSenha());
+        
         session.setAttribute("usuarioLogado", user);
         
-        String url = new Login().executa(req, resp);
-        
-        return url;
+        return "WEB-INF/paginas/Main.jsp";
     }
        
 }

@@ -10,7 +10,7 @@
 
          
          <sql:query dataSource = "${conexao}" var = "result">
-            SELECT * FROM usuario"/>
+            SELECT * FROM usuario
          </sql:query> 
 <html lang="en">
 <head>
